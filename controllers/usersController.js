@@ -1,59 +1,6 @@
 import db from '../config/db.js';
 import bcrypt from 'bcrypt';
 
-export const getUsers = async (req, res) => {
-  try {
-    const [data] = await db.query("SELECT * FROM users");
-    if (!data || data.length === 0) {
-      return res.status(404).send({
-        success: false,
-        message: "Os registros não foram encontrados",
-      });
-    }
-    res.status(200).send({
-      success: true,
-      message: "Registros encontrados:",
-      data,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({
-      success: false,
-      message: "Erro na API:",
-      error,
-    });
-  }
-}; 
-
-export const getUserByID = async (req, res) => {
-  try {
-    const idusers = req.params.id;
-    if (!idusers) {
-      return res.status(404).send({
-        success: false,
-        message: 'ID de usuário inválido',
-      });
-    }
-    const [data] = await db.query("SELECT * FROM users WHERE idusers = ?", [idusers]);
-    if (!data || data.length === 0) {
-      return res.status(404).send({
-        success: false,
-        message: 'Registro não encontrado',
-      });
-    }
-    res.status(200).send({
-      success: true,
-      userDetails: data[0],
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: 'Erro ao buscar ID de usuário',
-      error,
-    });
-  }
-};
 
   export const createUser = async (req, res) => {
   try {
