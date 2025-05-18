@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+}
+
+#loginForm {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.3);
+  max-width: 350px;
+  width: 100%;
+}
+
+#loginForm h2 {
+  margin-bottom: 30px;
+  color: var(--primary-light);
+  text-align: center;
+  color: #a44dff;
+  margin-bottom: 25px;
+}
+
+#loginForm label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #a44dff;
+}
+
+#loginForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+  background-color: #0f0f0f;
+  border: 2px solid #a44dff;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+#loginForm input:focus {
+  outline: none;
+  border-color: #c17eff;
+}
+
+#loginForm button {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #a44dff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+  background-color: #c17eff;
+}
+
+#loginForm p {
+  text-align: center;
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+#loginForm a {
+  color: #a44dff;
+  text-decoration: none;
+}
+
+#loginForm a:hover {
+  text-decoration: underline;
+}
+
+.cat-icon {
+  width: 60px;
+  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 15px;
+  height: auto;
+}

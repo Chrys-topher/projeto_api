@@ -2,22 +2,38 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Busca de Artigos Acadêmicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Artigos Acadêmicos</title>
   <link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
-  <h1>🔍 Buscar Artigos Acadêmicos</h1>
-  <span id="logout">Sair</span>
-  <p>Bem-vindo, <span id="username"></span>!</p>
+  <div class="home-container">
+    <div class="logout"><a href="index.html">Sair</a></div>
 
-  <label for="query">Termo de busca:</label><br />
-  <input type="text" id="query" placeholder="Ex: educação, inteligência artificial..." size="50" />
-  <br />
-  <button id="btnBuscar">Buscar</button>
+    <div class="icon-title">
+      <img src="img/icone-lupa.png" alt="Lupa">
+      <h1>Buscar Artigos Acadêmicos</h1>
+    </div>
 
-  <h2>📄 Resultados:</h2>
-  <div id="resultados"></div>
+    <p class="welcome">Bem-vindo, <span id="username"></span>!</p>
 
-  <script src="./js/home.js"></script>
+
+    <form class="form-search">
+      <label for="busca">Termo de busca:</label>
+      <input type="text" id="busca" placeholder="Ex: educação, inteligência artificial..." />
+      <button id="btnBuscar" type="submit">Buscar</button>
+    </form>
+
+    <div class="results">
+      <h2><img src="img/icone-pdf.png" alt="Ícone artigo"/> Resultados:</h2>
+      <div class="results-box">
+        <!-- Resultados dinâmicos aparecem aqui -->
+      </div>
+    </div>
+  </div>
+
+  <footer>Desenvolvido pela LogiCat.</footer>
 </body>
+<script src="./js/home.js"></script>
+
 </html>

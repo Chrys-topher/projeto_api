@@ -1,27 +1,159 @@
-/*isso estava no style do home.html. apenas movi para uma arquivo separado*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.icon-title img {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-title h1 {
+  font-size: 26px;
+  color: #a44dff;
+}
+
+.logout {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.logout a {
+  color: #a44dff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logout a:hover {
+  color: #d08fff;
+}
+
+.welcome {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.form-search {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(164, 77, 255, 0.2);
+}
+
+.form-search label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #c17eff;
+}
+
+.form-search input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #a44dff;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.form-search input:focus {
+  outline: none;
+  border-color: #c17eff;
+}
+
+.form-search button {
+  width: 100%;
+  padding: 12px;
+  background-color: #a44dff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.form-search button:hover {
+  background-color: #c17eff;
+}
+
+.results {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.results h2 {
+  font-size: 20px;
+  color: #c17eff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.results h2 img {
+  width: 20px;
+}
+
+.results-box {
+  background-color: #2b2b2b;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 12px;
+  color: #e0e0e0;
+  min-height: 60px;
+}
+
+footer {
+  background-color: #a44dff;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .form-search {
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
-}
+  }
 
-input,
-button {
-    padding: 10px;
-    margin: 5px 0;
-    font-size: 16px;
-}
+  .icon-title h1 {
+    font-size: 22px;
+  }
 
-.article {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-#logout {
-    float: right;
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
+  .results h2 {
+    font-size: 18px;
+  }
 }
