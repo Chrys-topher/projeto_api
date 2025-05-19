@@ -1,3 +1,4 @@
+
 body {
   display: flex;
   justify-content: center;
@@ -7,54 +8,80 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: #ffffff;
-  flex-direction: column;
-  min-height: 100vh; /* garante no mínimo 100vh */
-  overflow: hidden; /* para evitar scroll da página inteira */
-}
-
-.container {
-  background-color: #141414;
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(164, 77, 255, 0.2);
-  max-width: 400px;
-  width: 90%;
-  
-  /* Limitar altura para evitar container gigante */
-  max-height: 80vh;  /* máximo 80% da altura da viewport */
-  overflow-y: auto;  /* barra de rolagem interna se necessário */
-
-  text-align: center;
-  margin-bottom: 60px; /* espaço para footer fixo */
 }
 
 #cadastroForm {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
 }
 
 #cadastroForm h2 {
+  margin-bottom: 30px;
+  color: var(--primary-light);
+}
+
+#cadastroForm label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+#cadastroForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+#cadastroForm button {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#cadastroForm {
+  background-color: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.3);
+  max-width: 350px;
+  width: 100%;
+}
+
+#cadastroForm h2 {
+  text-align: center;
   color: #a44dff;
   margin-bottom: 25px;
 }
 
 #cadastroForm label {
-  align-self: flex-start;
+  display: block;
+  margin-bottom: 6px;
   font-weight: bold;
   color: #a44dff;
-  margin-bottom: 5px;
 }
 
-#cadastroForm input {
-  padding: 12px;
-  border-radius: 6px;
-  border: 2px solid #a44dff;
-  background-color: #0f0f0f;
-  color: #fff;
-  font-size: 15px;
+#cadastroForm input[type="text"],
+#cadastroForm input[type="email"],
+#cadastroForm input[type="password"] {
   width: 100%;
-  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #0f0f0f;
+  border: 2px solid #a44dff;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 #cadastroForm input:focus {
@@ -63,15 +90,14 @@ body {
 }
 
 #cadastroForm button {
-  padding: 12px;
   background-color: #a44dff;
-  color: white;
+  color: #fff;
   font-weight: bold;
   border: none;
+  padding: 12px;
+  width: 100%;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  width: 100%;
   transition: background-color 0.3s;
 }
 
@@ -79,39 +105,19 @@ body {
   background-color: #c17eff;
 }
 
-.links {
-  font-size: 14px;
+#cadastroForm p {
+  text-align: center;
   margin-top: 15px;
   color: #ccc;
+  font-size: 0.9rem;
 }
 
-.links a {
+#cadastroForm a {
   color: #a44dff;
   text-decoration: none;
 }
 
-.links a:hover {
+#cadastroForm a:hover {
   text-decoration: underline;
 }
 
-.cat-icon {
-  width: 60px;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-}
-
-/* Footer fixo no rodapé */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #8800ea;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 14px;
-  z-index: 10;
-}
