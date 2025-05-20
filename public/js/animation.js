@@ -1,11 +1,11 @@
-// Aguarda a página carregar totalmente
+// espera a página carregar
   window.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
       document.body.classList.add('fade-in');
     });
   });
 
-  // Transição ao sair da página clicando em links
+  // transição ao sair da página
   document.querySelectorAll('a[href]').forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');

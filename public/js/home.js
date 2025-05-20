@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Verifica se o usuário está logado
   const usuarioStr = localStorage.getItem('usuarioLogado');
   if (!usuarioStr) {
     alert('Você precisa estar logado para acessar esta página.');
     window.location.href = 'login.html';
     return;
-  }else {
-  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
-  document.getElementById('username').textContent = usuario.name || usuario.email || 'Usuário';
-}
+  } else {
+    const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+    document.getElementById('username').textContent = usuario.name || usuario.email || 'Usuário';
+  }
 
-  // Evento de clique no botão "Buscar"
+
   const btnBuscar = document.getElementById('btnBuscar');
   const inputBusca = document.getElementById('busca');
   const resultadosBox = document.querySelector('.results-box');
@@ -61,15 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
           const div = document.createElement('div');
           div.classList.add('article');
 
-          div.innerHTML = `
-            <strong>${index + 1}. ${artigo.title || "Sem título"}</strong><br>
-            <em>Autores:</em> ${artigo.authors?.join(", ") || "Não informados"}<br>
-            <em>Ano:</em> ${artigo.yearPublished || "Desconhecido"}<br>
-            <a href="${artigo.downloadUrl || '#'}" target="_blank">
-              ${artigo.downloadUrl ? "🔗 Acessar PDF" : "🔒 PDF não disponível"}
-            </a>
-          `;
+          // array pra armazenar o nome dos autores
+          const autores = Array.isArray(artigo.authors)
+            ? artigo.authors.map(a => a.nome || a.name || "Desconhecido").join(", ")
+            : "Não informados";
 
+
+            // retorno
+          div.innerHTML = `
+  <strong>${index + 1}. ${artigo.title || "Sem título"}</strong><br>
+         <em>Autores:</em> ${autores}<br>
+  <em>Ano:</em> ${artigo.yearPublished || "Desconhecido"}<br>
+  <a href="${artigo.downloadUrl || '#'}" target="_blank">
+    ${artigo.downloadUrl ? "🔗 Acessar PDF" : "🔒 PDF não disponível"}
+  </a>
+`;
           resultadosBox.appendChild(div);
         });
 
