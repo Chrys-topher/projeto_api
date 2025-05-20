@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('username').textContent = usuario.name || usuario.email || 'Usuário';
   }
 
-
   const btnBuscar = document.getElementById('btnBuscar');
   const inputBusca = document.getElementById('busca');
   const resultadosBox = document.querySelector('.results-box');

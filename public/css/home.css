@@ -55,6 +55,23 @@ body {
   color: #d08fff;
 }
 
+.editar {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.editar a {
+  color: #a44dff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.editar a:hover {
+  color: #d08fff;
+}
+
 .welcome {
   font-size: 16px;
   margin-bottom: 25px;

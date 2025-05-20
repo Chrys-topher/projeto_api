@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const app = express();
 const PORT = 8080;
 
-// Configuração para trabalhar com __dirname no ES Modules
+// __dirname no ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

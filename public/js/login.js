@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
+document.getElementById('loginForm').addEventListener('submit', async (e) => { 
   e.preventDefault();
 
   const email = document.getElementById('email').value;
@@ -18,11 +18,13 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     const dados = await resposta.json();
 
-    // Armazena o usuário logado no localStorage
+    // Armazena o usuário logado e o token no localStorage
     localStorage.setItem('usuarioLogado', JSON.stringify(dados.user));
+    localStorage.setItem('userId', dados.user.id);         // Usado nas rotas
+    localStorage.setItem('token', dados.token);            // Usado na autenticação
 
     alert('Login realizado com sucesso! Bem-vindo, ' + dados.user.name);
-    window.location.href = '/home.html'; // redireciona para a página principal
+    window.location.href = '/home.html';
 
   } catch (error) {
     alert(error.message);
